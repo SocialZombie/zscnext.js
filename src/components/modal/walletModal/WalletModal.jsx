@@ -10,6 +10,18 @@ import walletConnect from "@assets/images/icons/wallet.png";
 
 const WalletModal = () => {
   const { walletModalHandle } = useModal();
+  const metamaskAuth = () => {
+    console.log("metamask auth");
+  }
+  const coinbaseAuth = () => {
+    console.log("coinbase auth");
+  }
+  const trustWalletAuth = () => {
+    console.log("trust wallet auth");
+  }
+  const walletConnectAuth = () => {
+    console.log("walletConnectAuth");
+  }
 
   return (
     <>
@@ -27,42 +39,34 @@ const WalletModal = () => {
             </div>
             <div className="modal_body text-center">
               <div className="wallet_list">
-                <Link href="# ">
-                  <a>
+                  <a onClick={metamaskAuth}>
                     <img src={metamaskIcon.src} alt="Meta-mask-Image" />
                     MetaMask
                     <span>
                       <FiChevronRight />
                     </span>
                   </a>
-                </Link>
-                <Link href="# ">
-                  <a>
+                  <a onClick={coinbaseAuth}>
                     <img src={coinBase.src} alt="Coinbase-Image" />
                     Coinbase
                     <span>
                       <FiChevronRight />
                     </span>
                   </a>
-                </Link>
-                <Link href="# ">
-                  <a>
+                  <a onClick={trustWalletAuth}>
                     <img src={trustWalletIcon.src} alt="Trust-Image" />
                     Trust Wallet
                     <span>
                       <FiChevronRight />
                     </span>
                   </a>
-                </Link>
-                <Link href="# ">
-                  <a>
+                  <a onClick={walletConnectAuth}>
                     <img src={walletConnect.src} alt="Wallet-Image" />
                     WalletConnect
                     <span>
                       <FiChevronRight />
                     </span>
                   </a>
-                </Link>
               </div>
               <div className="modal_bottom_text">
                 By connecting your wallet, you agree to our
