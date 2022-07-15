@@ -1,0 +1,94 @@
+import { useState } from "react"
+import Link from "next/link";
+import { FiChevronDown } from "react-icons/fi";
+import FarmCardStyleWrapper from "./FarmCard.style"
+import Button from "src/components/button";
+
+import infoIcon from "@assets/images/icons/info-circle.svg"
+import linkIcon from "@assets/images/icons/link_icon.svg"
+
+const FarmCard = ({
+    icon,
+    pool,
+    apy,
+    staked,
+    tearned,
+    totalValue
+
+}) => {
+
+    const [expand, setExpand] = useState(false)
+
+    return (
+        <FarmCardStyleWrapper className={`form_item_wrapper ${expand ? 'active' : ''}`}>
+            <ul className="farm_header">
+                <li data-title="Pools">
+                    <img src={icon.src} alt="farm icon" />
+                    {pool}
+                </li>
+                <li data-title="APY">{apy}</li>
+                <li data-title="STAKED">{staked}</li>
+                <li data-title="TEARNED">{tearned}</li>
+                <li data-title="TOTAL VALUE LOCKED">{totalValue}</li>
+                {/* expand arrow */}
+                <li className="expand_arrow" onClick={() => setExpand(!expand)}><FiChevronDown /></li>
+            </ul>
+
+            {/* content will show when expanded */}
+            <div className="farm_content_wrapper">
+                <div className="farm_content_list">
+                    <div className="farm_box_item farm_deposit">
+                        <label htmlFor="deposit">Deposit</label>
+
+                        <div className="input_box">
+                            <input type="text" placeholder="0.00" />
+                            <Button variant="blue" className="approve_btn"> Approve </Button>
+                            <span>Max</span>
+                        </div>
+
+                        <h5>Your balance: 156 BNB</h5>
+                    </div>
+                    <div className="farm_box_item farm_withdraw">
+                        <label htmlFor="deposite">Withdraw</label>
+
+                        <div className="input_box">
+                            <input type="text" placeholder="0.00" />
+                            <Button variant="blue" className="approve_btn"> Approve </Button>
+                            <span>Max</span>
+                        </div>
+
+                        <h5>Your balance: 156 BNB</h5>
+                    </div>
+                    <div className="farm_box_item farm_balance">
+                        <h4>Pending Rewards</h4>
+                        <div className="fram_wallet">
+                            <span>58.99 BNB</span>
+                            <Button variant="blue" className="farm_claim_btn"> Claim </Button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="farm_bottom_info">
+                    <Link href="#">
+                        <a>
+                            Get ACT -BNB <img src={linkIcon.src} alt="icon" />
+                        </a>
+                    </Link>
+                    <Link href="#">
+                        <a>
+                            View Contract <img src={linkIcon.src} alt="icon" />
+                        </a>
+
+                    </Link>
+                    <Link href="#">
+                        <a>
+                            Unstaking Fee <img src={infoIcon.src} alt="icon" />
+                        </a>
+                    </Link>
+                </div>
+            </div>
+        </FarmCardStyleWrapper>
+    )
+}
+
+export default FarmCard;
