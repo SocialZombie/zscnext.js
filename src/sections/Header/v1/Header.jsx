@@ -107,20 +107,20 @@ const Header = () => {
               </button>
 
               <div className="wallet_btn">
-                Buy token <MdOutlineKeyboardArrowDown />
+                Community <MdOutlineKeyboardArrowDown />
 
                 <div className="wallet_token_list">
                   <Link href="#">
-                    <a> <img src={walletIcon1.src} alt="icon" /> PancakeSwap </a>
+                    <a> <img src={walletIcon1.src} alt="icon" /> Calendar/Events </a>
                   </Link>
                   <Link href="#">
-                    <a> <img src={walletIcon2.src} alt="icon" />  UniSwap</a>
+                    <a> <img src={walletIcon2.src} alt="icon" /> Discord/Roles</a>
                   </Link>
                   <Link href="#">
-                    <a> <img src={walletIcon3.src} alt="icon" />  CoinMarketCap</a>
+                    <a> <img src={walletIcon3.src} alt="icon" />  UKN Leaderboard</a>
                   </Link>
                   <Link href="#">
-                    <a> <img src={walletIcon4.src} alt="icon" />  Gate.io</a>
+                    <a> <img src={walletIcon4.src} alt="icon" />  Twitter</a>
                   </Link>
                 </div>
               </div>
